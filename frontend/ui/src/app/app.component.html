@@ -1,0 +1,83 @@
+<mat-toolbar color="primary">
+  <span>Code Companion</span>
+</mat-toolbar>
+
+<main class="content">
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Generador de Código con IA</mat-card-title>
+      <mat-card-subtitle>Describe lo que necesitas y la IA lo programará por ti.</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form class="form-container">
+        <!-- [(ngModel)] enlaza este select con la variable 'selectedLanguage' -->
+        <mat-form-field appearance="outline">
+          <mat-label>Lenguaje de Programación</mat-label>
+          <mat-select [(ngModel)]="selectedLanguage" name="language">
+            <mat-option value="python">Python</mat-option>
+            <mat-option value="javascript">JavaScript</mat-option>
+            <mat-option value="typescript">TypeScript</mat-option>
+            <mat-option value="java">Java</mat-option>
+            <mat-option value="csharp">C#</mat-option>
+            <mat-option value="go">Go</mat-option>
+            <mat-option value="rust">Rust</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <!-- [(ngModel)] enlaza este textarea con la variable 'question' -->
+        <mat-form-field appearance="outline">
+          <mat-label>¿Qué código necesitas generar?</mat-label>
+          <textarea
+            matInput
+            rows="5"
+            placeholder="Ej: una función que ordene una lista de números"
+            [(ngModel)]="question"
+            name="question"
+          ></textarea>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+      <!-- (click) llama a la función 'generateCode()' -->
+      <!-- [disabled] deshabilita el botón si 'isLoading' es true -->
+      <button mat-raised-button color="primary" (click)="generateCode()" [disabled]="isLoading">
+        <!-- *ngIf muestra el spinner o el texto según 'isLoading' -->
+        <span *ngIf="!isLoading">Generar Código</span>
+        <mat-spinner *ngIf="isLoading" diameter="24"></mat-spinner>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+  <!-- *ngIf muestra esta tarjeta solo si 'isLoading' es true -->
+  <mat-card *ngIf="isLoading" class="response-card-loading">
+    <mat-card-content>
+      <mat-spinner diameter="50"></mat-spinner>
+      <p>Generando respuesta...</p>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- *ngIf muestra esta tarjeta solo si hay una 'response' -->
+  <mat-card *ngIf="response && !isLoading" class="response-card">
+    <mat-card-header>
+      <mat-card-title>Respuesta de la IA</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <!-- Usamos [innerText] para seguridad y mantenemos el formato con CSS -->
+      <div class="response-content" [innerText]="response"></div>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- *ngIf muestra esta tarjeta solo si hay un 'error' -->
+  <mat-card *ngIf="error && !isLoading" class="response-card-error">
+    <mat-card-header>
+      <mat-card-title>Error</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{error}}</p>
+    </mat-card-content>
+  </mat-card>
+
+</main>

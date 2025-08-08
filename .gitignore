@@ -1,0 +1,35 @@
+
+# Backend specific
+backend/node_modules
+backend/.env
+
+# Frontend specific
+frontend/ui/node_modules
+frontend/ui/dist
+frontend/ui/tmp
+frontend/ui/out-tsc
+frontend/ui/bazel-out
+frontend/ui/npm-debug.log
+frontend/ui/yarn-error.log
+frontend/ui/.idea/
+frontend/ui/.project
+frontend/ui/.classpath
+frontend/ui/.c9/
+frontend/ui/*.launch
+frontend/ui/.settings/
+frontend/ui/*.sublime-workspace
+frontend/ui/.vscode/*
+!frontend/ui/.vscode/settings.json
+!frontend/ui/.vscode/tasks.json
+!frontend/ui/.vscode/launch.json
+!frontend/ui/.vscode/extensions.json
+frontend/ui/.history/*
+frontend/ui/.angular/cache
+frontend/ui/.sass-cache/
+frontend/ui/connect.lock
+frontend/ui/coverage
+frontend/ui/libpeerconnection.log
+frontend/ui/testem.log
+frontend/ui/typings
+frontend/ui/.DS_Store
+frontend/ui/Thumbs.db

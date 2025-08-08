@@ -1,0 +1,178 @@
+.content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+mat-card {
+  width: 100%;
+  background-color: #2a2a3a; /* Fondo de tarjeta ligeramente más claro que el body */
+  color: #e0e0f0;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Sombra suave y elegante */
+  border-radius: 12px; /* Bordes redondeados */
+  border: 1px solid rgba(70, 70, 90, 0.3); /* Borde sutil */
+}
+
+mat-card-header {
+  padding-bottom: 1.5rem;
+}
+
+mat-card-title {
+  color: #82b1ff; /* Azul suave para títulos */
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+mat-card-subtitle {
+  color: #b0b0c0;
+  font-size: 1.1rem;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+/* Estilos para los campos de Material */
+.mat-mdc-form-field-appearance-outline .mat-mdc-form-field-flex {
+  background-color: #1e1e2e; /* Fondo del input, igual que el body */
+  border-radius: 8px;
+}
+
+.mat-mdc-form-field-appearance-outline .mat-mdc-form-field-outline {
+  color: #4e4e6e; /* Borde del input */
+}
+
+.mat-mdc-form-field:not(.mat-focused) .mat-mdc-form-field-label {
+  color: #b0b0c0; /* Etiqueta no enfocada */
+}
+
+.mat-mdc-form-field.mat-focused .mat-mdc-form-field-label {
+  color: #82b1ff; /* Etiqueta enfocada */
+}
+
+.mat-mdc-form-field.mat-focused .mat-mdc-form-field-outline-thick {
+  color: #82b1ff; /* Borde enfocado */
+}
+
+/* Color del texto en los inputs */
+.mat-mdc-input-element {
+  color: #e0e0f0 !important; /* Asegura que el texto escrito sea blanco/claro */
+}
+
+/* Estilos para el selector de lenguaje */
+.mat-mdc-select-value {
+  color: #e0e0f0; /* Color del texto seleccionado */
+}
+
+.mat-mdc-select-arrow {
+  color: #b0b0c0; /* Color de la flecha del selector */
+}
+
+/* Botón */
+button.mat-mdc-raised-button.mat-primary {
+  background-color: #82b1ff; /* Azul suave para el botón */
+  color: #1e1e2e; /* Texto oscuro para contraste */
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+button.mat-mdc-raised-button.mat-primary:hover {
+  background-color: #64b5f6;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+button.mat-mdc-raised-button.mat-primary[disabled] {
+  background-color: #4e4e6e !important;
+  color: #808090 !important;
+  box-shadow: none !important;
+}
+
+/* Spinner dentro del botón */
+mat-spinner {
+  margin: 0 auto;
+}
+
+/* Tarjeta de carga */
+.response-card-loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem;
+  gap: 1.5rem;
+  background-color: #2a2a3a;
+  color: #e0e0f0;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(70, 70, 90, 0.3);
+}
+
+.response-card-loading p {
+  color: #82b1ff;
+  font-size: 1.2rem;
+}
+
+/* Tarjeta de respuesta y error */
+.response-card {
+  background-color: #2a2a3a;
+  color: #e0e0f0;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  border: 1px solid rgba(70, 70, 90, 0.3);
+}
+
+.response-card-error {
+  background-color: #c62828; /* Rojo para errores */
+  color: white;
+}
+
+.response-card-error mat-card-title {
+  color: white;
+}
+
+.response-card-error p {
+  color: #ffccbc;
+}
+
+/* Contenedor del código resaltado */
+.response-content {
+  background-color: #1e1e2e; /* Fondo muy oscuro para el bloque de código, igual que el body */
+  padding: 1.8rem;
+  border-radius: 10px;
+  overflow-x: auto;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace; /* Fuentes monoespaciadas */
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e0e0f0; /* Color de texto por defecto para el código */
+  border: 1px solid rgba(70, 70, 90, 0.2); /* Borde sutil para el bloque de código */
+}
+
+/* Asegura que el fondo de highlight.js sea el mismo */
+.hljs {
+  background: #1e1e2e !important;
+  color: #e0e0f0;
+}
+
+/* Estilos para la barra de herramientas */
+mat-toolbar {
+  background-color: #1e1e2e; /* Fondo de la barra de herramientas */
+  color: #82b1ff; /* Color del texto del título */
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(70, 70, 90, 0.3);
+}
